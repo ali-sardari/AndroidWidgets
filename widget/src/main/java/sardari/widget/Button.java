@@ -103,7 +103,7 @@ public class Button extends android.support.v7.widget.AppCompatButton {
 
     //region Foreground
     public void setForegroundResource(int drawableResId) {
-        setForeground(getContext().getResources().getDrawable(drawableResId));
+        setForeground(ContextCompat.getDrawable(getContext(), drawableResId));
     }
 
     public void setForeground(Drawable drawable) {
