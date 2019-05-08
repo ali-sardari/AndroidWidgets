@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="Button">
+        <attr name="foreground"/>
+        <attr name="disableDoubleClick" format="boolean" />
+        <attr name="clickDelay" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="isRtl" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditText">
+        <attr name="drawableLeftCompat" format="reference" />
+        <attr name="drawableRightCompat" format="reference" />
+        <attr name="drawableTopCompat" format="reference" />
+        <attr name="drawableBottomCompat" format="reference" />
+        <attr name="typeface" format="enum">
+            <enum name="IranYekan" value="0" />
+            <enum name="Consolas" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="NumberStepper">
+        <attr name="stepValue" format="integer" />
+        <attr name="defValue" format="integer" />
+        <attr name="minValue" format="integer" />
+        <attr name="maxValue" format="integer" />
+        <attr name="editable" format="boolean" />
+        <attr name="vibrate" format="boolean" />
+        <attr name="color" format="color" />
+    </declare-styleable>
+
+</resources>
