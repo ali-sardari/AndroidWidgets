@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <declare-styleable name="Button">
-        <attr name="foreground"/>
+        <attr name="foreground" />
         <attr name="disableDoubleClick" format="boolean" />
         <attr name="clickDelay" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageView">
+        <attr name="foreground" />
+        <attr name="ripple" format="boolean" />
+        <attr name="square" format="boolean" />
+        <attr name="disableDoubleClick" />
+        <attr name="clickDelay" />
     </declare-styleable>
 
     <declare-styleable name="CustomTextInputLayout">
