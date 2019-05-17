@@ -15,10 +15,15 @@ import sardari.widget.R;
 
 public class ToastUtils {
     private static int textColor;
+    private Context context;
 
     public static void makeText(String message, ToastType type) {
-        if (Utils.getContext() != null) {
-            makeText(Utils.getContext(), message, type);
+        try {
+            if (Utils.getContext() != null) {
+                makeText(Utils.getContext(), message, type);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
