@@ -3,4 +3,13 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="toast_success">#993F7E3F</color>
+    <color name="toast_info">#99337AB7</color>
+    <color name="toast_warning">#99FF8800</color>
+    <color name="toast_error">#99CC0000</color>
+    <color name="toast_default">#993D3D3D</color>
+
+    <color name="toast_text">#B3FFFFFF</color>
+
 </resources>
