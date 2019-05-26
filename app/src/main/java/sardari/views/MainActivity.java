@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import sardari.utils.Utils;
+import sardari.utils.toast.ToastMode;
 import sardari.utils.toast.ToastUtils;
 import sardari.widget.ImageView;
 
@@ -22,9 +23,21 @@ public class MainActivity extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.makeText("این یک تست است...", ToastUtils.ToastType.Info);
+//                ToastUtils.makeText(
+//                        getApplicationContext(),
+//                        "این یک تست است...",
+//                        R.color.colorAccent,
+//                        R.color.colorPrimary,
+//                        R.drawable.ic_launcher_background,
+//                        null,
+//                        ToastUtils.LENGTH_SHORT);
 
-                Log.w("btnOK","Click...........");
+                ToastUtils.makeText(getApplicationContext(),"این یک تست است...", ToastMode.Error, ToastUtils.LENGTH_SHORT);
+
+//                ToastUtils.makeText(getApplicationContext(),"این یک تست است...");
+//                ToastUtils.makeText("این یک تست است...", ToastMode.Error, ToastUtils.LENGTH_LONG);
+//                Toast.makeText(MainActivity.this, "این یک تست است.", Toast.LENGTH_LONG).show();
+                Log.w("btnOK", "Click...........");
             }
         });
     }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top|right"
+    android:background="#4CAF50"
+    android:layoutDirection="rtl"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingTop="@dimen/_2sdp"
+    android:paddingRight="@dimen/_1sdp"
+    android:paddingBottom="@dimen/_2sdp">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:src="@drawable/icv_success" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:text="ثبت اطلاعات با موفقیت انجام شد."
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp" />
+
+</LinearLayout>

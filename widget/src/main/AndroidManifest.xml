@@ -1,2 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sardari.widget" />
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="sardari.widget"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application android:supportsRtl="true">
+
+    </application>
+
+</manifest>

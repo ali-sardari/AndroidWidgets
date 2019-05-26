@@ -30,31 +30,11 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class UIUtil {
-    //region Singleton
-    private static volatile UIUtil instance;
-    private static final Object mutex = new Object();
-
-    public static UIUtil getInstance() {
-        UIUtil result = instance;
-        if (result == null) {
-            synchronized (mutex) {
-                result = instance;
-                if (result == null) {
-                    instance = result = new UIUtil();
-                }
-            }
-        }
-        return result;
-    }
-    //endregion
-
-    public void setRTL(Activity activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            activity.getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-        }
+    public static void setRTL(Activity activity) {
+        activity.getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
     }
 
-    public void hideKeyboard(Activity activity) {
+    public static void hideKeyboard(Activity activity) {
         View view = activity.getCurrentFocus();
         if (view != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -65,7 +45,7 @@ public class UIUtil {
         }
     }
 
-    public void hideKeyboard(Dialog dialog) {
+    public static void hideKeyboard(Dialog dialog) {
         try {
             View view = dialog.getCurrentFocus();
             if (view != null) {
@@ -79,7 +59,7 @@ public class UIUtil {
         }
     }
 
-    public void showKeyboard(Activity activity, EditText editText) {
+    public static void showKeyboard(Activity activity, EditText editText) {
         editText.requestFocus();
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
@@ -87,19 +67,19 @@ public class UIUtil {
         }
     }
 
-    public int getColor(Context context, int id) {
+    public static int getColor(Context context, int id) {
         return ContextCompat.getColor(context, id);
     }
 
-    public int getColor(int id) {
+    public static int getColor(int id) {
         return getColor(Utils.getContext(), id);
     }
 
-    public Drawable getDrawable(int ResID) {
+    public static Drawable getDrawable(int ResID) {
         return ResourcesCompat.getDrawable(Utils.getContext().getResources(), ResID, null);
     }
 
-    public Drawable getDrawableFromUri(Uri uri) {
+    public static Drawable getDrawableFromUri(Uri uri) {
         Drawable drawable = null;
         try {
             InputStream inputStream = Utils.getContext().getContentResolver().openInputStream(uri);
@@ -111,17 +91,17 @@ public class UIUtil {
         return drawable;
     }
 
-    public int getThemeColor(Context context, int colorId) {
+    public static int getThemeColor(Context context, int colorId) {
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(colorId, typedValue, true);
         return typedValue.data;
     }
 
-    public Drawable getDrawable(Context context, int drawableId) {
+    public static Drawable getDrawable(Context context, int drawableId) {
         return ContextCompat.getDrawable(context, drawableId);
     }
 
-    public Bitmap takeScreenShot(Activity activity) {
+    public static Bitmap takeScreenShot(Activity activity) {
         View decorView = activity.getWindow().getDecorView();
 //        decorView.setDrawingCacheEnabled(true);
         decorView.buildDrawingCache();
@@ -137,19 +117,19 @@ public class UIUtil {
         return bitmap;
     }
 
-    public int getScreenWidth(Context context) {
+    public static int getScreenWidth(Context context) {
         return getScreenSize(context, null).x;
     }
 
-    public int getScreenWidth() {
+    public static int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
     }
 
-    public int getScreenHeight() {
+    public static int getScreenHeight() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
 
-    public int getStatusBarHeight() {
+    public static int getStatusBarHeight() {
         int result = 0;
         int resourceId = Utils.getContext().getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -158,15 +138,15 @@ public class UIUtil {
         return result;
     }
 
-    public int getDimensionInPixelResource(int i) {
+    public static int getDimensionInPixelResource(int i) {
         return Utils.getContext().getResources().getDimensionPixelSize(i);
     }
 
-    public Display getDisplaySize() {
+    public static Display getDisplaySize() {
         return ((WindowManager) Utils.getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
     }
 
-    public Point getScreenSize(Context context, Point outSize) {
+    public static Point getScreenSize(Context context, Point outSize) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Point ret = outSize == null ? new Point() : outSize;
         Display defaultDisplay = null;
@@ -181,29 +161,29 @@ public class UIUtil {
         return ret;
     }
 
-    public int getScreenHeight(Context context) {
+    public static int getScreenHeight(Context context) {
         return getScreenSize(context, null).y;
     }
 
-    public int getDpi(Context context) {
+    public static int getDpi(Context context) {
         return context.getResources().getDisplayMetrics().densityDpi;
     }
 
-    public void hiddenView(final ViewGroup view) {
+    public static void hiddenView(final ViewGroup view) {
 //        AnimUtils.with(Techniques.FadeOut)
 //                .duration(1000)
 //                .onEnd(animator -> view.setVisibility(View.GONE))
 //                .playOn(view);
     }
 
-    public void showView(final ViewGroup view) {
+    public static void showView(final ViewGroup view) {
 //        view.setVisibility(View.VISIBLE);
 //        AnimUtils.with(Techniques.FadeIn)
 //                .duration(1000)
 //                .playOn(view);
     }
 
-    public void setTintedCompoundDrawable(TextView textView, int drawableRes, int tintRes) {
+    public static void setTintedCompoundDrawable(TextView textView, int drawableRes, int tintRes) {
         textView.setCompoundDrawablesWithIntrinsicBounds(
                 null,  // Left
                 null, // Top
@@ -213,7 +193,7 @@ public class UIUtil {
         textView.setCompoundDrawablePadding(12);
     }
 
-    public Drawable tintDrawable(Drawable drawable, int tint) {
+    public static Drawable tintDrawable(Drawable drawable, int tint) {
         drawable = DrawableCompat.wrap(drawable);
         DrawableCompat.setTint(drawable, tint);
         DrawableCompat.setTintMode(drawable, PorterDuff.Mode.SRC_ATOP);
@@ -221,24 +201,24 @@ public class UIUtil {
         return drawable;
     }
 
-    public int pxToDp(int px) {
+    public static int pxToDp(int px) {
         return (int) (px / Resources.getSystem().getDisplayMetrics().density);
     }
 
-    public int dpToPx(int dp) {
+    public static int dpToPx(int dp) {
         return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 
-    public int DpToPx(Context context, int dpId) {
+    public static int DpToPx(Context context, int dpId) {
         return (int) context.getResources().getDimension(dpId);
     }
 
-    public float dpToPixel(Context c, float dp) {
+    public static float dpToPixel(Context c, float dp) {
         float density = c.getResources().getDisplayMetrics().density;
         return dp * density;
     }
 
-    public int dipToPx(Context context, float dpValue) {
+    public static int dipToPx(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
@@ -247,12 +227,12 @@ public class UIUtil {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 
-    public int pxToDip(Context context, float pxValue) {
+    public static int pxToDip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
 
-    public void setHtmlToTextView(TextView textView, String html) {
+    public static void setHtmlToTextView(TextView textView, String html) {
         Spanned result;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             result = Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY);

@@ -4,12 +4,22 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="toast_success">#993F7E3F</color>
-    <color name="toast_info">#99337AB7</color>
-    <color name="toast_warning">#99FF8800</color>
-    <color name="toast_error">#99CC0000</color>
-    <color name="toast_default">#993D3D3D</color>
+    <!--Toast colors-->
+    <!--<color name="toast_success">#CC3F7E3F</color>-->
+    <!--<color name="toast_info">#CC337AB7</color>-->
+    <!--<color name="toast_warning">#CCFF8800</color>-->
+    <!--<color name="toast_error">#CCCC0000</color>-->
+    <!--<color name="toast_default">#CC3D3D3D</color>-->
+    <!--<color name="toast_text">#CCFFFFFF</color>-->
 
-    <color name="toast_text">#B3FFFFFF</color>
+    <!--Toast colors-->
+    <color name="toast_success">#007E34</color>
+    <color name="toast_info">#0099CB</color>
+    <color name="toast_warning">#FF8800</color>
+    <color name="toast_error">#CC0001</color>
+    <color name="toast_default">#5F5F5F</color>
+    <color name="toast_text">#CCFFFFFF</color>
+
+    <!--Dialog colors-->
 
 </resources>
