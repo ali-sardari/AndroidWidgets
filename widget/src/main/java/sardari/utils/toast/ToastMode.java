@@ -1,5 +1,5 @@
 package sardari.utils.toast;
 
 public enum ToastMode {
-    Default, Success, Warning, Error, Info, Custom
+    Default, Success, Warning, Error, Info
 }

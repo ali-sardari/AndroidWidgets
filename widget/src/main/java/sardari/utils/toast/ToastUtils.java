@@ -19,7 +19,6 @@ import sardari.utils.Utils;
 import sardari.widget.R;
 
 public class ToastUtils {
-    private static int textColor;
     public static final int LENGTH_SHORT = 0;
     public static final int LENGTH_LONG = 1;
 

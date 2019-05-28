@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import sardari.utils.UIUtil;
 
 public class Button extends android.support.v7.widget.AppCompatButton {
     private static int defaultClickDelay = 1000; //ms
@@ -55,6 +58,17 @@ public class Button extends android.support.v7.widget.AppCompatButton {
         } finally {
             typedArray.recycle();
         }
+    }
+
+    private static GradientDrawable drawRoundRect(Context context, int backgroundColor) {
+        GradientDrawable shape = new GradientDrawable();
+        shape.setShape(GradientDrawable.RECTANGLE);
+        shape.setCornerRadius(context.getResources().getDimensionPixelSize(R.dimen._20sdp));
+        shape.setColor(backgroundColor);
+//        shape.setAlpha(1);
+
+        shape.setStroke(1, UIUtil.getColor(context, R.color.toast_text));
+        return shape;
     }
     //==================================================================================
 
