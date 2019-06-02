@@ -23,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ToastUtils.makeText(
-//                        getApplicationContext(),
-//                        "این یک تست است...",
-//                        R.color.colorAccent,
-//                        R.color.colorPrimary,
-//                        R.drawable.ic_launcher_background,
-//                        null,
-//                        ToastUtils.LENGTH_SHORT);
+                ToastUtils.makeText(
+                        getApplicationContext(),
+                        "این یک تست است...",
+                        R.color.colorAccent,
+                        R.color.textColorPrimaryInverse,
+                        R.drawable.icv_network,
+                        null,
+                        ToastUtils.LENGTH_SHORT);
 
-                ToastUtils.makeText(getApplicationContext(),"این یک تست است...", ToastMode.Error, ToastUtils.LENGTH_SHORT);
+//                ToastUtils.makeText(getApplicationContext(),"این یک تست است...", ToastMode.Default, ToastUtils.LENGTH_SHORT);
 
 //                ToastUtils.makeText(getApplicationContext(),"این یک تست است...");
 //                ToastUtils.makeText("این یک تست است...", ToastMode.Error, ToastUtils.LENGTH_LONG);

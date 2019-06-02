@@ -22,10 +22,7 @@ public class ToastUtils {
     public static final int LENGTH_SHORT = 0;
     public static final int LENGTH_LONG = 1;
 
-    @IntDef(value = {
-            LENGTH_SHORT,
-            LENGTH_LONG
-    })
+    @IntDef(value = {LENGTH_SHORT, LENGTH_LONG})
     @Retention(RetentionPolicy.RUNTIME)
     @interface Duration {
     }
@@ -54,129 +51,66 @@ public class ToastUtils {
         makeText(context, message, ToastMode.Default, LENGTH_LONG);
     }
 
-//    public static void makeText(Context context, String message, ToastMode type, @Duration int duration) {
-//        LinearLayout layout = new LinearLayout(context);
-//        TextView tv = new TextView(context);
-//
-//        switch (type) {
-//            case Success:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_success, R.color.toast_text);
-//                tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.icv_success, 0);
-//                break;
-//            case Error:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_error, R.color.toast_text);
-//                tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.icv_error, 0);
-//                break;
-//            case Info:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_info, R.color.toast_text);
-//                tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.icv_info, 0);
-//                break;
-//            case Warning:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_warning, R.color.toast_text);
-//                tv.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.icv_warning, 0);
-//                break;
-//            case Default:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_default, R.color.toast_text);
-//                break;
-//            default:
-//                setBackgroundAndTextColor(context, layout, R.color.toast_default, R.color.toast_text);
-//        }
-//
-//        layout.setPadding(
-//                dpToPixel(context, 10),
-//                dpToPixel(context, 6),
-//                dpToPixel(context, 10),
-//                dpToPixel(context, 6));
-//
-//        tv.setTextColor(textColor);
-////        tv.setTextSize(13);
-//        tv.setGravity(Gravity.CENTER);
-//        tv.setTypeface(FontUtils.getTypeface());
-//        tv.setText(message);
-//
-//        tv.setCompoundDrawablePadding(context.getResources().getDimensionPixelSize(R.dimen._5sdp));
-//
-//        layout.addView(tv);
-//
-//        Toast toast = new Toast(context);
-//        toast.setView(layout);
-//        toast.setDuration(duration == LENGTH_SHORT ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
-//
-//        toast.show();
-//    }
-
     public static void makeText(Context context, String message, ToastMode type, @Duration int duration) {
+        //region TypeFace
         Typeface typeface;
-
         try {
             typeface = FontUtils.getTypeface();
         } catch (Exception e) {
             typeface = null;
         }
+        //endregion
 
+        int backgroundColor;
+        int textColor;
+        Integer icon;
 
         switch (type) {
             case Success:
                 //region Generate Toast
-                makeText(
-                        context,
-                        message,
-                        R.color.toast_success,
-                        R.color.toast_text,
-                        R.drawable.icv_success,
-                        typeface,
-                        duration);
+                backgroundColor = R.color.toast_success;
+                textColor = R.color.toast_text;
+                icon = R.drawable.icv_success;
                 //endregion
                 break;
             case Error:
                 //region Generate Toast
-                makeText(
-                        context,
-                        message,
-                        R.color.toast_error,
-                        R.color.toast_text,
-                        R.drawable.icv_error,
-                        typeface,
-                        duration);
+                backgroundColor = R.color.toast_error;
+                textColor = R.color.toast_text;
+                icon = R.drawable.icv_error;
                 //endregion
                 break;
             case Info:
                 //region Generate Toast
-                makeText(
-                        context,
-                        message,
-                        R.color.toast_info,
-                        R.color.toast_text,
-                        R.drawable.icv_info,
-                        typeface,
-                        duration);
+                backgroundColor = R.color.toast_info;
+                textColor = R.color.toast_text;
+                icon = R.drawable.icv_info;
                 //endregion
                 break;
             case Warning:
                 //region Generate Toast
-                makeText(
-                        context,
-                        message,
-                        R.color.toast_warning,
-                        R.color.toast_text,
-                        R.drawable.icv_warning,
-                        typeface,
-                        duration);
+                backgroundColor = R.color.toast_warning;
+                textColor = R.color.toast_text;
+                icon = R.drawable.icv_warning;
                 //endregion
                 break;
             case Default:
             default:
                 //region Generate Toast
-                makeText(
-                        context,
-                        message,
-                        R.color.toast_default,
-                        R.color.toast_text,
-                        null,
-                        typeface,
-                        duration);
+                backgroundColor = R.color.toast_default;
+                textColor = R.color.toast_text;
+                icon = null;
                 //endregion
         }
+
+        makeText(
+                context,
+                message,
+                backgroundColor,
+                textColor,
+                icon,
+                typeface,
+                duration);
     }
 
     private static void makeText(Context context, String message, int backgroundColor, int textColor, int icon, @Duration int duration) {
@@ -192,11 +126,19 @@ public class ToastUtils {
         tv.setText(message);
 
         if (backgroundColor != null) {
-            layout.setBackground(drawRoundRect(context, UIUtil.getColor(context, backgroundColor)));
+            try {
+                layout.setBackground(drawRoundRect(context, UIUtil.getColor(context, backgroundColor)));
+            } catch (Exception e) {
+                layout.setBackground(drawRoundRect(context, UIUtil.getColor(context, R.color.toast_default)));
+            }
         }
 
         if (textColor != null) {
-            tv.setTextColor(UIUtil.getColor(context, textColor));
+            try {
+                tv.setTextColor(UIUtil.getColor(context, textColor));
+            } catch (Exception e) {
+                tv.setTextColor(UIUtil.getColor(context, R.color.toast_text));
+            }
         }
 
         if (icon != null) {

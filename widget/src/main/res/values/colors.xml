@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">?colorPrimary</color>
+    <color name="colorPrimaryDark">?colorPrimaryDark</color>
+    <color name="colorAccent">?colorAccent</color>
 
-    <!--Toast colors-->
-    <!--<color name="toast_success">#CC3F7E3F</color>-->
-    <!--<color name="toast_info">#CC337AB7</color>-->
-    <!--<color name="toast_warning">#CCFF8800</color>-->
-    <!--<color name="toast_error">#CCCC0000</color>-->
-    <!--<color name="toast_default">#CC3D3D3D</color>-->
-    <!--<color name="toast_text">#CCFFFFFF</color>-->
+    <color name="rippleColor">#FFFFFF</color>
 
     <!--Toast colors-->
     <color name="toast_success">#007E34</color>

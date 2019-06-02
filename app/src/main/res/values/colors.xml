@@ -2,5 +2,19 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FF5722</color>
+
+    <color name="activityBackground">#F7F7F7</color>
+
+    <color name="textColorPrimary">#1B1B1B</color>
+    <color name="textColorPrimaryInverse">#F0F0F0</color>
+    <color name="textColorSecondary">#FF5722</color>
+    <color name="textColorSecondaryInverse">#FF5722</color>
+    <color name="textColorTertiary">#FF5722</color>
+    <color name="textColorTertiaryInverse">#FF5722</color>
+    <color name="textColorLink">#0B79DA</color>
+    <color name="textColorLinkInverse">#FF5722</color>
+    <color name="textColorHint">#FF5722</color>
+    <color name="textColorHintInverse">#FF5722</color>
+
 </resources>

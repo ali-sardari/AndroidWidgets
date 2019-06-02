@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <!--<sardari.widget.Button-->
@@ -21,13 +23,35 @@
     <sardari.widget.ImageView
         android:id="@+id/ivTest"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
         android:src="@drawable/bg2"
-        app:ripple="true"
         app:disableDoubleClick="false"
+        app:ripple="true"
         app:square="true" />
 
+    <sardari.widget.Button
+        android:id="@+id/btnTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button_primary"
+        android:text="test" />
+
+    <sardari.widget.RippleView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:rv_rippleDuration="500"
+        app:rv_type="rectangle"
+        app:rv_zoom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg2" />
+    </sardari.widget.RippleView>
 
 </LinearLayout>

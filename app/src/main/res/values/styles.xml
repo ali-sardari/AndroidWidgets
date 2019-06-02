@@ -1,11 +1,52 @@
-<resources>
-
-    <!-- Base application theme. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/activityBackground</item>
+
+        <!--<item name="colorControlNormal">@color/onyx</item>-->
+        <!--<item name="android:colorBackground">@color/lightGray</item>-->
+        <!--<item name="android:colorForeground">@color/blueGreen</item>-->
+
+        <item name="buttonStyle">@style/DefaultButton</item>
+
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
+
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>
+
+        <item name="android:textColorTertiary">@color/textColorTertiary</item>
+        <item name="android:textColorTertiaryInverse">@color/textColorTertiaryInverse</item>
+
+        <item name="android:textColorLink">@color/textColorLink</item>
+        <item name="android:textColorLinkInverse">@color/textColorLinkInverse</item>
+
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:textColorHintInverse">@color/textColorHintInverse</item>
+
+        <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">
+            @android:transition/slide_right
+        </item>
+        <item name="android:windowExitTransition" tools:targetApi="lollipop">
+            @android:transition/slide_left
+        </item>
+    </style>
+
+    <!--<style name="DefaultButton" parent="Widget.AppCompat.Button.Borderless">-->
+        <!--<item name="android:background">@color/textColorHintInverse</item>-->
+
+    <!--</style>-->
+
+    <style name="DefaultButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/textColorPrimaryInverse</item>
+        <item name="android:background">@color/colorAccent</item>
+        <!--<item name="android:foreground">?attr/selectableItemBackground</item>-->
+        <!--<item name="android:textAppearance">?android:attr/textAppearanceSmallInverse</item>-->
+        <!--<item name="android:gravity">center_vertical|center_horizontal</item>-->
     </style>
 
 </resources>
