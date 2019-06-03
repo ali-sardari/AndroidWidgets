@@ -6,6 +6,8 @@
 
     <color name="activityBackground">#F7F7F7</color>
 
+    <!--<color name="colorControlNormal">#C500FF</color>-->
+
     <color name="textColorPrimary">#1B1B1B</color>
     <color name="textColorPrimaryInverse">#F0F0F0</color>
     <color name="textColorSecondary">#FF5722</color>

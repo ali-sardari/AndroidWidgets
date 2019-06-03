@@ -81,7 +81,7 @@ public class RippleView extends RelativeLayout {
             return;
 
         final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RippleView);
-        rippleColor = typedArray.getColor(R.styleable.RippleView_rv_color, getResources().getColor(R.color.rippleColor));
+        rippleColor = typedArray.getColor(R.styleable.RippleView_rv_color, getResources().getColor(R.color.customRippleColor));
         rippleType = typedArray.getInt(R.styleable.RippleView_rv_type, 0);
         hasToZoom = typedArray.getBoolean(R.styleable.RippleView_rv_zoom, false);
         isCentered = typedArray.getBoolean(R.styleable.RippleView_rv_centered, false);
@@ -100,22 +100,64 @@ public class RippleView extends RelativeLayout {
         paint.setAlpha(rippleAlpha);
         this.setWillNotDraw(false);
 
-        gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+//        gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+//            @Override
+//            public void onLongPress(MotionEvent event) {
+//                super.onLongPress(event);
+//                animateRipple(event);
+//                sendClickEvent(true);
+//            }
+//
+//            @Override
+//            public boolean onSingleTapConfirmed(MotionEvent e) {
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onSingleTapUp(MotionEvent e) {
+//                return true;
+//            }
+//        });
+
+        gestureDetector = new GestureDetector(context, new GestureDetector.OnGestureListener() {
             @Override
-            public void onLongPress(MotionEvent event) {
-                super.onLongPress(event);
-                animateRipple(event);
+            public boolean onDown(MotionEvent e) {
+                animateRipple(e);
                 sendClickEvent(true);
+
+                return false;
             }
 
             @Override
-            public boolean onSingleTapConfirmed(MotionEvent e) {
-                return true;
+            public void onShowPress(MotionEvent e) {
+                animateRipple(e);
+                sendClickEvent(true);
+
             }
 
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
-                return true;
+                return false;
+            }
+
+            @Override
+            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+                return false;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent e) {
+                animateRipple(e);
+                sendClickEvent(true);
+
+            }
+
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                animateRipple(e1);
+                sendClickEvent(true);
+
+                return false;
             }
         });
 
@@ -139,10 +181,14 @@ public class RippleView extends RelativeLayout {
                     canvas.restore();
                 }
                 invalidate();
-                if (onCompletionListener != null) onCompletionListener.onComplete(this);
+
+                if (onCompletionListener != null)
+                    onCompletionListener.onComplete(this);
+
                 return;
-            } else
+            } else {
                 canvasHandler.postDelayed(runnable, frameRate);
+            }
 
             if (timer == 0)
                 canvas.save();
@@ -248,8 +294,97 @@ public class RippleView extends RelativeLayout {
             animateRipple(event);
             sendClickEvent(false);
         }
+
         return super.onTouchEvent(event);
     }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        boolean superOnTouchEvent = super.onTouchEvent(event);
+//
+//        if (!isEnabled()) return superOnTouchEvent;
+//
+//        boolean gestureResult = gestureDetector.onTouchEvent(event);
+//        if (gestureResult) {
+//            return true;
+//        } else {
+//            int action = event.getActionMasked();
+//            switch (action) {
+//                case MotionEvent.ACTION_UP:
+//                    pendingClickEvent = new PerformClickEvent();
+//
+//                    if (prepressed) {
+//                        childView.setPressed(true);
+//                        postDelayed(
+//                                new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//                                        childView.setPressed(false);
+//                                    }
+//                                }, ViewConfiguration.getPressedStateDuration());
+//                    }
+//
+//                    if (isEventInBounds) {
+//                        startRipple(pendingClickEvent);
+//                    } else if (!rippleHover) {
+//                        setRadius(0);
+//                    }
+//                    if (!rippleDelayClick && isEventInBounds) {
+//                        pendingClickEvent.run();
+//                    }
+//                    cancelPressedEvent();
+//                    break;
+//                case MotionEvent.ACTION_DOWN:
+//                    setPositionInAdapter();
+//                    eventCancelled = false;
+//                    pendingPressEvent = new PressedEvent(event);
+//                    if (isInScrollingContainer()) {
+//                        cancelPressedEvent();
+//                        prepressed = true;
+//                        postDelayed(pendingPressEvent, ViewConfiguration.getTapTimeout());
+//                    } else {
+//                        pendingPressEvent.run();
+//                    }
+//                    break;
+//                case MotionEvent.ACTION_CANCEL:
+//                    if (rippleInAdapter) {
+//                        // dont use current coords in adapter since they tend to jump drastically on scroll
+//                        currentCoords.set(previousCoords.x, previousCoords.y);
+//                        previousCoords = new Point();
+//                    }
+//                    childView.onTouchEvent(event);
+//                    if (rippleHover) {
+//                        if (!prepressed) {
+//                            startRipple(null);
+//                        }
+//                    } else {
+//                        childView.setPressed(false);
+//                    }
+//                    cancelPressedEvent();
+//                    break;
+//                case MotionEvent.ACTION_MOVE:
+//                    if (rippleHover) {
+//                        if (isEventInBounds && !eventCancelled) {
+//                            invalidate();
+//                        } else if (!isEventInBounds) {
+//                            startRipple(null);
+//                        }
+//                    }
+//
+//                    if (!isEventInBounds) {
+//                        cancelPressedEvent();
+//                        if (hoverAnimator != null) {
+//                            hoverAnimator.cancel();
+//                        }
+//                        childView.onTouchEvent(event);
+//                        eventCancelled = true;
+//                    }
+//                    break;
+//            }
+//            return true;
+//        }
+//    }
+
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {

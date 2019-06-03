@@ -11,6 +11,7 @@
         <!--<item name="android:colorForeground">@color/blueGreen</item>-->
 
         <item name="buttonStyle">@style/DefaultButton</item>
+        <!--<item name="colorControlNormal">@color/colorControlNormal</item>-->
 
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
@@ -43,7 +44,7 @@
 
     <style name="DefaultButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/textColorPrimaryInverse</item>
-        <item name="android:background">@color/colorAccent</item>
+        <item name="android:background">#14B42F</item>
         <!--<item name="android:foreground">?attr/selectableItemBackground</item>-->
         <!--<item name="android:textAppearance">?android:attr/textAppearanceSmallInverse</item>-->
         <!--<item name="android:gravity">center_vertical|center_horizontal</item>-->

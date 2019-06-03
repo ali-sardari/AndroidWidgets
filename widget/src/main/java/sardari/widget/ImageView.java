@@ -47,7 +47,7 @@ public class ImageView extends android.support.v7.widget.AppCompatImageView {
             isSquare = typedArray.getBoolean(R.styleable.ImageView_square, false);
             isRipple = typedArray.getBoolean(R.styleable.ImageView_ripple, false);
 
-            Drawable foreground = typedArray.getDrawable(R.styleable.ImageView_foreground);
+            foreground = typedArray.getDrawable(R.styleable.ImageView_foreground);
             if (isRipple && foreground == null && this.hasOnClickListeners()) {
                 TypedValue outValue = new TypedValue();
                 getContext().getTheme().resolveAttribute(android.R.attr.selectableItemBackground, outValue, true);

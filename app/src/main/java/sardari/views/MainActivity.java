@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 
 import sardari.utils.Utils;
-import sardari.utils.toast.ToastMode;
 import sardari.utils.toast.ToastUtils;
 import sardari.widget.ImageView;
 
@@ -40,5 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("btnOK", "Click...........");
             }
         });
+    }
+
+    public void test(View view) {
     }
 }

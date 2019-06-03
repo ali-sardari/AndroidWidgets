@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">?colorPrimaryDark</color>
     <color name="colorAccent">?colorAccent</color>
 
-    <color name="rippleColor">#FFFFFF</color>
+    <color name="customRippleColor">#FFFFFF</color>
 
     <!--Toast colors-->
     <color name="toast_success">#007E34</color>
@@ -14,6 +14,7 @@
     <color name="toast_default">#5F5F5F</color>
     <color name="toast_text">#CCFFFFFF</color>
 
-    <!--Dialog colors-->
+    <!--Button colors-->
+    <color name="button_background">#046BB9</color>
 
 </resources>
