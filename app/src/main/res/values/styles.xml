@@ -10,23 +10,23 @@
         <!--<item name="android:colorBackground">@color/lightGray</item>-->
         <!--<item name="android:colorForeground">@color/blueGreen</item>-->
 
-        <item name="buttonStyle">@style/DefaultButton</item>
+        <!--<item name="buttonStyle">@style/DefaultButton</item>-->
         <!--<item name="colorControlNormal">@color/colorControlNormal</item>-->
 
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
+        <!--<item name="android:textColorPrimary">@color/textColorPrimary</item>-->
+        <!--<item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>-->
 
-        <item name="android:textColorSecondary">@color/textColorSecondary</item>
-        <item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>
+        <!--<item name="android:textColorSecondary">@color/textColorSecondary</item>-->
+        <!--<item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>-->
 
-        <item name="android:textColorTertiary">@color/textColorTertiary</item>
-        <item name="android:textColorTertiaryInverse">@color/textColorTertiaryInverse</item>
+        <!--<item name="android:textColorTertiary">@color/textColorTertiary</item>-->
+        <!--<item name="android:textColorTertiaryInverse">@color/textColorTertiaryInverse</item>-->
 
-        <item name="android:textColorLink">@color/textColorLink</item>
-        <item name="android:textColorLinkInverse">@color/textColorLinkInverse</item>
+        <!--<item name="android:textColorLink">@color/textColorLink</item>-->
+        <!--<item name="android:textColorLinkInverse">@color/textColorLinkInverse</item>-->
 
-        <item name="android:textColorHint">@color/textColorHint</item>
-        <item name="android:textColorHintInverse">@color/textColorHintInverse</item>
+        <!--<item name="android:textColorHint">@color/textColorHint</item>-->
+        <!--<item name="android:textColorHintInverse">@color/textColorHintInverse</item>-->
 
         <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
         <item name="android:windowEnterTransition" tools:targetApi="lollipop">

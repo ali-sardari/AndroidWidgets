@@ -211,12 +211,14 @@ public class RippleView extends RelativeLayout {
             paint.setColor(rippleColor);
 
             if (rippleType == 1) {
-                if ((((float) timer * frameRate) / rippleDuration) > 0.6f)
+                if ((((float) timer * frameRate) / rippleDuration) > 0.6f) {
                     paint.setAlpha((int) (rippleAlpha - ((rippleAlpha) * (((float) timerEmpty * frameRate) / (durationEmpty)))));
-                else
+                } else {
                     paint.setAlpha(rippleAlpha);
-            } else
+                }
+            } else {
                 paint.setAlpha((int) (rippleAlpha - ((rippleAlpha) * (((float) timer * frameRate) / rippleDuration))));
+            }
 
             timer++;
         }
@@ -272,8 +274,8 @@ public class RippleView extends RelativeLayout {
             radiusMax -= ripplePadding;
 
             if (isCentered || rippleType == 1) {
-                this.x = getMeasuredWidth() / 2;
-                this.y = getMeasuredHeight() / 2;
+                this.x = getMeasuredWidth() >> 1;
+                this.y = getMeasuredHeight() >> 1;
             } else {
                 this.x = x;
                 this.y = y;
@@ -288,6 +290,7 @@ public class RippleView extends RelativeLayout {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (gestureDetector.onTouchEvent(event)) {

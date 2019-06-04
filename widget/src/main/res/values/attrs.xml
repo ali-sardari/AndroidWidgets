@@ -18,10 +18,11 @@
     </declare-styleable>
 
     <declare-styleable name="Button">
-        <attr name="borderColor" format="color" />
-        <attr name="backgroundColor" format="color" />
         <attr name="foreground" />
-        <attr name="radius" format="dimension" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="borderColor" format="color" />
+        <attr name="rippleColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
         <attr name="disableDoubleClick" format="boolean" />
         <attr name="clickDelay" format="integer" />
     </declare-styleable>
