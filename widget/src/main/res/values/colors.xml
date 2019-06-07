@@ -5,7 +5,8 @@
     <color name="colorAccent">?colorAccent</color>
 
     <color name="customRippleColor">#FFFFFF</color>
-    <color name="defaultRippleColor">#808080</color>
+    <color name="defaultRippleColor">#6B6B6B</color>
+    <color name="disableColor">#00FFFFFF</color>
 
     <!--Toast colors-->
     <color name="toast_success">#007E34</color>

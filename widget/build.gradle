@@ -27,5 +27,4 @@ dependencies {
     def ssp_sdp = "1.0.6"
     implementation "com.intuit.sdp:sdp-android:${ssp_sdp}"
     implementation "com.intuit.ssp:ssp-android:${ssp_sdp}"
-
 }
