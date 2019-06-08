@@ -44,7 +44,7 @@
 
     <style name="DefaultButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/textColorPrimaryInverse</item>
-        <item name="android:background">#14B42F</item>
+        <item name="android:background">#008BB8</item>
         <!--<item name="android:foreground">?attr/selectableItemBackground</item>-->
         <!--<item name="android:textAppearance">?android:attr/textAppearanceSmallInverse</item>-->
         <!--<item name="android:gravity">center_vertical|center_horizontal</item>-->

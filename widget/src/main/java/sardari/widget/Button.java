@@ -132,6 +132,13 @@ public class Button extends AppCompatButton {
         super.draw(canvas);
     }
 
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+
+        setAlpha(enabled ? 1f : 0.5f);
+    }
+
     //------------------------------------------------------------------------------------
     //region isDisableDoubleClick | Getter/Setter
     public boolean isDisableDoubleClick() {
