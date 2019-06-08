@@ -3,7 +3,6 @@ package sardari.widget;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -14,6 +13,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.support.v7.content.res.AppCompatResources;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -56,6 +56,8 @@ public class Button extends AppCompatButton {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Button, 0, 0);
 
         try {
+            initDrawable(context, typedArray);
+
             clickDelay = typedArray.getInteger(R.styleable.Button_clickDelay, defaultClickDelay);
             isDisableDoubleClick = typedArray.getBoolean(R.styleable.Button_disableDoubleClick, true);
             rippleColor = typedArray.getColor(R.styleable.Button_rippleColor, context.getResources().getColor(R.color.defaultRippleColor));
@@ -97,6 +99,39 @@ public class Button extends AppCompatButton {
         }
     }
 
+    private void initDrawable(Context context, TypedArray typedArray) {
+        Drawable drawableLeft = null;
+        Drawable drawableRight = null;
+        Drawable drawableBottom = null;
+        Drawable drawableTop = null;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            drawableLeft = typedArray.getDrawable(R.styleable.Button_drawableLeftCompat);
+            drawableRight = typedArray.getDrawable(R.styleable.Button_drawableRightCompat);
+            drawableBottom = typedArray.getDrawable(R.styleable.Button_drawableBottomCompat);
+            drawableTop = typedArray.getDrawable(R.styleable.Button_drawableTopCompat);
+        } else {
+            final int drawableLeftId = typedArray.getResourceId(R.styleable.Button_drawableLeftCompat, -1);
+            final int drawableRightId = typedArray.getResourceId(R.styleable.Button_drawableRightCompat, -1);
+            final int drawableBottomId = typedArray.getResourceId(R.styleable.Button_drawableBottomCompat, -1);
+            final int drawableTopId = typedArray.getResourceId(R.styleable.Button_drawableTopCompat, -1);
+
+            if (drawableLeftId != -1)
+                drawableLeft = AppCompatResources.getDrawable(context, drawableLeftId);
+            if (drawableRightId != -1)
+                drawableRight = AppCompatResources.getDrawable(context, drawableRightId);
+            if (drawableBottomId != -1)
+                drawableBottom = AppCompatResources.getDrawable(context, drawableBottomId);
+            if (drawableTopId != -1)
+                drawableTop = AppCompatResources.getDrawable(context, drawableTopId);
+        }
+
+        setCompoundDrawablesWithIntrinsicBounds(drawableLeft, drawableTop, drawableRight, drawableBottom);
+        setCompoundDrawablePadding(3);
+        setPadding(10, 2, 10, 2);
+//        setCompoundDrawablePadding(10);
+    }
+
     //------------------------------------------------------------------------------------
     @Override
     public boolean performClick() {
@@ -127,10 +162,10 @@ public class Button extends AppCompatButton {
         super.setOnClickListener(l);
     }
 
-    @Override
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-    }
+//    @Override
+//    public void draw(Canvas canvas) {
+//        super.draw(canvas);
+//    }
 
     @Override
     public void setEnabled(boolean enabled) {

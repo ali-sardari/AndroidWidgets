@@ -75,22 +75,23 @@
         android:layout_height="wrap_content"
         app:cornerRadius="50dp"
         android:textColor="#fff"
-        app:borderColor="#fff"
-        android:background="#008BB8"
-        app:rippleColor="#946699"
+        app:borderColor="#FF0000"
+        android:background="#B800AF"
         android:layout_marginTop="20dp"
         app:clickDelay="1000"
+        android:drawablePadding="5dp"
+        app:disableDoubleClick="false"
+        app:drawableRightCompat="@drawable/icv_error"
         android:enabled="true"
         android:text="test" />
 
-    <Button
-        style="@style/DefaultButton"
-        android:id="@+id/btnTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:enabled="false"
-        android:text="test" />
+    <!--<Button-->
+        <!--android:theme="@style/DefaultButton"-->
+        <!--android:id="@+id/btnTest"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:text="test" />-->
 
     <!--<sardari.widget.RippleView-->
     <!--android:layout_width="200dp"-->
