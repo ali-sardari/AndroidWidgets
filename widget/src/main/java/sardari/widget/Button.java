@@ -127,8 +127,8 @@ public class Button extends AppCompatButton {
         }
 
         setCompoundDrawablesWithIntrinsicBounds(drawableLeft, drawableTop, drawableRight, drawableBottom);
-        setCompoundDrawablePadding(3);
-        setPadding(10, 2, 10, 2);
+//        setCompoundDrawablePadding(3);
+//        setPadding(10, 2, 10, 2);
 //        setCompoundDrawablePadding(10);
     }
 
