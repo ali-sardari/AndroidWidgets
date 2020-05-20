@@ -32,7 +32,7 @@
     </declare-styleable>
 
     <declare-styleable name="ImageView">
-        <attr name="foreground" />
+        <attr name="foreground" format="color" />
         <attr name="ripple" format="boolean" />
         <attr name="square" format="boolean" />
         <attr name="disableDoubleClick" />

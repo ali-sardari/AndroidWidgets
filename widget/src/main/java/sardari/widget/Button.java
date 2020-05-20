@@ -162,11 +162,6 @@ public class Button extends AppCompatButton {
         super.setOnClickListener(l);
     }
 
-//    @Override
-//    public void draw(Canvas canvas) {
-//        super.draw(canvas);
-//    }
-
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);

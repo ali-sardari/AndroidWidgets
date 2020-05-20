@@ -9,17 +9,6 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-    <!--<sardari.widget.Button-->
-    <!--android:id="@+id/btnOK"-->
-    <!--android:layout_width="200dp"-->
-    <!--android:layout_height="100dp"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:background="#00BCD4"-->
-    <!--android:padding="10dp"-->
-    <!--android:text="Hello World!"-->
-    <!--app:clickDelay="1000"-->
-    <!--app:disableDoubleClick="true" />-->
-
     <sardari.widget.ImageView
         android:id="@+id/ivTest"
         android:layout_width="wrap_content"
@@ -32,28 +21,6 @@
         android:visibility="gone"
         app:ripple="true"
         app:square="true" />
-
-    <!--<Button-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:text="hhhhhh"-->
-    <!--android:enabled="false"-->
-    <!--android:layout_height="wrap_content" />-->
-
-    <!--<Button-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:text="hhhhhh"-->
-    <!--android:layout_marginTop="10dp"-->
-    <!--android:enabled="true"-->
-    <!--android:layout_height="wrap_content" />-->
-
-    <!--<sardari.widget.Button-->
-    <!--android:id="@+id/btnTest1"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--app:cornerRadius="100dp"-->
-    <!--android:enabled="false"-->
-    <!--android:layout_marginTop="20dp"-->
-    <!--android:text="test" />-->
 
     <sardari.widget.Button
         android:id="@+id/btnTest2"
@@ -76,7 +43,6 @@
         app:cornerRadius="50dp"
         android:textColor="#fff"
         app:borderColor="#FF0000"
-        android:background="#B800AF"
         android:paddingRight="50dp"
         android:layout_marginTop="20dp"
         app:clickDelay="1000"
@@ -86,37 +52,4 @@
         android:enabled="true"
         android:text="test" />
 
-    <!--<Button-->
-        <!--android:theme="@style/DefaultButton"-->
-        <!--android:id="@+id/btnTest"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:text="test" />-->
-
-    <!--<sardari.widget.RippleView-->
-    <!--android:layout_width="200dp"-->
-    <!--android:layout_height="200dp"-->
-    <!--android:layout_marginTop="20dp"-->
-    <!--app:rv_rippleDuration="500"-->
-    <!--app:rv_type="simpleRipple"-->
-    <!--app:rv_centered="false"-->
-    <!--app:rv_zoom="true">-->
-
-    <!--<ImageView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="200dp"-->
-    <!--android:layout_gravity="center"-->
-    <!--android:scaleType="centerCrop"-->
-    <!--android:src="@drawable/bg2" />-->
-    <!--</sardari.widget.RippleView>-->
-
-    <!--<TextView-->
-    <!--android:clickable="true"-->
-    <!--android:focusable="true"-->
-    <!--android:onClick="test"-->
-    <!--android:text="@string/app_name"-->
-    <!--android:background="?attr/selectableItemBackground"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content" />-->
 </LinearLayout>
