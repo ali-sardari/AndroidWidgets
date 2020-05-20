@@ -16,6 +16,6 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-	  implementation 'com.github.ali-sardari:AndroidWidgets:1.0.4'
+	  implementation 'com.github.ali-sardari:AndroidWidgets:1.0.8'
 }
 ```
