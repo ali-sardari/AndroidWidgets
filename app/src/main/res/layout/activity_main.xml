@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:src="@drawable/bg2"
         android:padding="50dp"
         app:disableDoubleClick="false"
-        android:visibility="gone"
+        android:visibility="visible"
         app:ripple="true"
         app:square="true" />
 
@@ -33,7 +33,7 @@
         app:rippleColor="#946699"
         android:layout_marginTop="20dp"
         app:clickDelay="1000"
-        android:enabled="false"
+        android:enabled="true"
         android:text="test" />
 
     <sardari.widget.Button
@@ -52,4 +52,4 @@
         android:enabled="true"
         android:text="test" />
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

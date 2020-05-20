@@ -5,12 +5,14 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-public class ImageView extends android.support.v7.widget.AppCompatImageView {
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.content.ContextCompat;
+
+public class ImageView extends AppCompatImageView {
     private Context context;
     private final static int defaultClickDelay = 1000; //ms
     private boolean isDisableDoubleClick = true;

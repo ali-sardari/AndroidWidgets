@@ -2,9 +2,6 @@ package sardari.utils;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.util.SimpleArrayMap;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -17,6 +14,11 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.collection.SimpleArrayMap;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class FontUtils {
     private static final String PATH = "fonts/%s.ttf";
